@@ -1,0 +1,138 @@
+---
+title: "Intro_RStudio"
+output: html_document
+date: "2025-02-06"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+---
+title: "Introduction to R in RStudio Cloud"
+author: "Your Name"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+# Welcome to R & RStudio Cloud
+R is a powerful programming language used for **data analysis, visualization, and statistics**. In this lesson, you'll learn the basics of working with R.
+
+---
+
+## Getting Started
+When you open RStudio Cloud, you’ll see:
+- **Console (bottom left)**: Runs your R commands.
+- **Script Editor (top left)**: Where you write and save your code.
+- **Environment & Files (top right)**: Stores variables and datasets.
+- **Plots & Help (bottom right)**: Where graphs and documentation appear.
+
+**Tip:** Click **File → New File → R Script** to create a script.
+
+---
+
+## Running Basic Math
+Run the following in the **Console** (bottom left):
+
+```{r}
+2 + 2
+5 * 10
+100 / 4
+```
+**Try it!** What happens when you use `-` or `^`?
+
+---
+
+## Creating Variables
+Variables store values for later use:
+
+```{r}
+x <- 10
+y <- 5
+sum <- x + y
+sum
+```
+
+The `<-` (arrow) **assigns** a value to a variable.
+
+---
+
+##  Using Functions
+Functions perform actions in R. Try:
+
+```{r}
+sqrt(25)    # Square root
+round(3.14159, 2)  # Rounding to 2 decimal places
+```
+**Tip:** Functions use **parentheses `( )`** to take inputs.
+
+---
+
+## Creating a Simple Data Frame (Table)
+A **data frame** is like an Excel table:
+
+```{r}
+students <- data.frame(
+  name = c("Alice", "Bob", "Charlie"),
+  age = c(20, 22, 21),
+  grade = c(90, 85, 88)
+)
+students
+```
+**Try it!** Add another student with a new age and grade.
+
+---
+
+##  Importing Data
+To read data from a CSV file:
+
+```{r}
+# Uncomment and replace 'yourfile.csv' with the actual file name
+# data <- read.csv("yourfile.csv")
+# head(data)
+```
+Use `View(data)` (capital V) to see the dataset in RStudio Cloud.
+
+---
+
+##  Exploring Data
+Analyze datasets with:
+
+```{r}
+summary(students)   # Summary statistics
+names(students)     # Column names
+dim(students)       # Number of rows and columns
+```
+**Try running `str(students)`—what does it show?**
+
+---
+
+##  Making a Quick Plot
+
+```{r}
+plot(students$age, students$grade, main="Age vs. Grade", xlab="Age", ylab="Grade")
+```
+The `$` sign **accesses columns** in a dataset.
+
+---
+
+## Your First R Assignment
+Complete these tasks in R:
+1. Create two new variables, `a` and `b`, and add them together.
+2. Make a data frame with at least **4 rows and 3 columns**.
+3. Plot one variable **against another**.
+
+---
+
+## Ready to Explore More?
+Try **ggplot2** for advanced visualization:
+
+```{r}
+install.packages("ggplot2")
+library(ggplot2)
+ggplot(students, aes(x=age, y=grade)) + geom_point()
+```
+
+Need help? Type `?function_name` in the Console (e.g., `?mean`).
+
+
